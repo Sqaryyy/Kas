@@ -1,26 +1,48 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --cream:       #FFF8F0;
+  --warm-white:  #FFFCF7;
+  --orange-100:  #FFF0E0;
+  --orange-300:  #FFB97A;
+  --orange-500:  #FF7A35;
+  --orange-700:  #D94F00;
+  --mint-100:    #E5FFF5;
+  --mint-500:    #00D67E;
+  --mint-700:    #008C52;
+  --yellow-100:  #FFFBE0;
+  --yellow-500:  #FFD700;
+  --lilac-100:   #F3EEFF;
+  --lilac-300:   #C9ABFF;
+  --lilac-500:   #9B59FF;
+  --ink:         #1A1108;
+  --ink-60:      #7A6A55;
+  --ink-30:      #C4B8A8;
+  --ink-10:      #F0EBE3;
+  --font-d:      'Syne', sans-serif;
+  --font-b:      'Plus Jakarta Sans', sans-serif;
+  --border:      2px solid #1A1108;
+  --border-t:    3px solid #1A1108;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-b);
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.6;
+  overflow-x: hidden;
 }

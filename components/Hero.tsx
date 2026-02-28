@@ -13,10 +13,18 @@ export default function Hero() {
           gap: 48px;
           align-items: center;
           position: relative;
-          overflow: hidden;
+          overflow: visible;
         }
 
         /* ── Background blobs ── */
+        .hero-blob-container {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          pointer-events: none;
+          z-index: 0;
+        }
+
         .hero-blob {
           position: absolute;
           border-radius: 50%;
@@ -35,7 +43,7 @@ export default function Hero() {
         .hero-blob-2 {
           width: 400px;
           height: 400px;
-          background: #9de8c4; /* mint-300 approximation */
+          background: #9de8c4;
           bottom: -50px;
           right: 30%;
         }
@@ -60,7 +68,7 @@ export default function Hero() {
           letter-spacing: 0.08em;
           text-transform: uppercase;
           margin-bottom: 24px;
-          box-shadow: 2px 2px 0 var(--ink);
+          box-shadow: 2px 2px 0 #1A1108;
         }
 
         .hero-eyebrow-blink {
@@ -119,6 +127,7 @@ export default function Hero() {
           gap: 16px;
           flex-wrap: wrap;
           margin-bottom: 48px;
+          padding: 4px;
         }
 
         /* ── Shared button base ── */
@@ -135,33 +144,31 @@ export default function Hero() {
           gap: 6px;
         }
 
-        .btn:hover {
-          transform: translate(-2px, -2px);
-        }
-
         .btn-big {
           background: var(--orange-500);
           color: white;
           padding: 18px 40px;
           font-size: 1.1rem;
-          box-shadow: 6px 6px 0 var(--ink);
+          box-shadow: 4px 4px 0 #1A1108 !important;
         }
 
         .btn-big:hover {
-          box-shadow: 10px 12px 0 var(--ink);
-        }
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 8px 0 #1A1108 !important;
+}
 
         .btn-outline {
           background: transparent;
           color: var(--ink);
           padding: 18px 40px;
           font-size: 1.1rem;
-          box-shadow: 4px 4px 0 var(--ink);
+          box-shadow: 4px 4px 0 #1A1108;
         }
 
         .btn-outline:hover {
+          transform: translate(-2px, -2px);
           background: var(--ink-10);
-          box-shadow: 6px 8px 0 var(--ink);
+          box-shadow: 6px 8px 0 #1A1108;
         }
 
         /* ── Stats ── */
@@ -205,7 +212,7 @@ export default function Hero() {
           border-radius: 32px;
           overflow: hidden;
           border: var(--border-t);
-          box-shadow: 14px 14px 0 var(--ink);
+          box-shadow: 14px 14px 0 #1A1108;
         }
 
         .hero-photo-frame img {
@@ -279,49 +286,45 @@ export default function Hero() {
           padding: 7px 16px;
           border-radius: 999px;
           border: var(--border);
-          box-shadow: 3px 3px 0 var(--ink);
+          box-shadow: 3px 3px 0 #1A1108;
         }
 
         /* ── Responsive ── */
         @media (max-width: 900px) {
-        .hero {
-          grid-template-columns: 1fr;
-          min-height: auto;
-          padding: 60px 5vw;
-        }
+          .hero {
+            grid-template-columns: 1fr;
+            min-height: auto;
+            padding: 60px 5vw;
+          }
 
-        .hero-visual {
-          display: none;
-        }
+          .hero-visual {
+            display: none;
+          }
 
-        .hero-stats {
-          gap: 16px;
-        }
+          .hero-stats {
+            gap: 16px;
+          }
 
-        /* Hide distracting blobs on mobile */
-        .hero-blob {
-          display: none;
-        }
+          .hero-btns {
+            flex-direction: column;
+            gap: 12px;
+          }
 
-        /* Stack buttons full-width */
-        .hero-btns {
-          flex-direction: column;
-          gap: 12px;
+          .btn-big,
+          .btn-outline {
+            width: 100%;
+            justify-content: center;
+            padding: 16px 24px;
+          }
         }
-
-        .btn-big,
-        .btn-outline {
-          width: 100%;
-          justify-content: center;
-          padding: 16px 24px;
-        }
-      }
       `}</style>
 
       <div className="hero">
-        {/* Background blobs */}
-        <div className="hero-blob hero-blob-1" aria-hidden="true" />
-        <div className="hero-blob hero-blob-2" aria-hidden="true" />
+        {/* Background blobs — contained so they don't affect button shadows */}
+        <div className="hero-blob-container" aria-hidden="true">
+          <div className="hero-blob hero-blob-1" />
+          <div className="hero-blob hero-blob-2" />
+        </div>
 
         {/* ── Left: Content ── */}
         <div className="hero-content">

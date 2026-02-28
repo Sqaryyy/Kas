@@ -35,6 +35,10 @@
   --border-t:    3px solid #1A1108;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 html {
   scroll-behavior: smooth;
 }

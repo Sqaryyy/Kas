@@ -308,8 +308,11 @@ export default function Hero() {
           .hero-btns {
             flex-direction: column;
             gap: 12px;
-          }
+          } 
 
+          .hero-blob-container {
+    display: none;
+  }
           .btn-big,
           .btn-outline {
             width: 100%;

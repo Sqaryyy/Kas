@@ -81,11 +81,30 @@ export default function Navbar() {
           box-shadow: 6px 8px 0 var(--ink);
         }
 
-        @media (max-width: 640px) {
-          .nav-links {
-            display: none;
-          }
-        }
+       @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+      }
+
+      .navbar {
+        gap: 12px;
+      }
+
+      .nav-logo {
+        font-size: 0.85rem;
+        min-width: 0;        /* allows it to shrink */
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .btn-cta {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+        white-space: nowrap;  /* prevents button text wrapping */
+        flex-shrink: 0;       /* prevents button from shrinking */
+      }
+    }
       `}</style>
 
       <nav className="navbar">

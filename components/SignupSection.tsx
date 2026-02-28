@@ -271,8 +271,21 @@ export default function Signup() {
         /* ── Responsive ── */
         @media (max-width: 900px) {
           .signup-inner {
-            grid-template-columns: 1fr;
+            display: flex;
+            flex-direction: column;
             gap: 40px;
+          }
+
+          .signup-info {
+            order: 1;
+          }
+
+          .signup-form {
+            order: 2;
+          }
+
+          .questions-preview {
+            order: 3;
           }
 
           .form-row {
@@ -283,8 +296,8 @@ export default function Signup() {
 
       <section className="signup" id="prijava">
         <div className="signup-inner">
-          {/* ── Left: Info + questions preview ── */}
-          <div>
+          {/* ── Left: Heading + lead ── */}
+          <div className="signup-info">
             <div className="section-tag">Prijavljivanje</div>
             <h2 className="signup-heading">
               Rezerviši
@@ -294,29 +307,6 @@ export default function Signup() {
             <p className="signup-lead">
               Besplatno. Bez obaveze. Samo dođi i razgovaraj.
             </p>
-
-            <div className="questions-preview">
-              <div className="qp-title">
-                🎯 Primeri pitanja koja ćeš popuniti:
-              </div>
-              {PREVIEW_QUESTIONS.map((q, i) => (
-                <div className="question-item" key={i}>
-                  <div className="q-num">{i + 1}</div>
-                  <div>
-                    <div className="q-text">{q}</div>
-                    <div className="q-votes">
-                      <button className="q-vote q-vote-yes" type="button">
-                        Da ✓
-                      </button>
-                      <button className="q-vote q-vote-no" type="button">
-                        Ne ✗
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              ))}
-              <p className="qp-footer">+ još 7 pitanja · ~3 minute</p>
-            </div>
           </div>
 
           {/* ── Right: Form ── */}
@@ -443,6 +433,30 @@ export default function Signup() {
               saglasnost
             </p>
           </form>
+
+          {/* ── Questions preview (below form on mobile) ── */}
+          <div className="questions-preview">
+            <div className="qp-title">
+              🎯 Primeri pitanja koja ćeš popuniti:
+            </div>
+            {PREVIEW_QUESTIONS.map((q, i) => (
+              <div className="question-item" key={i}>
+                <div className="q-num">{i + 1}</div>
+                <div>
+                  <div className="q-text">{q}</div>
+                  <div className="q-votes">
+                    <button className="q-vote q-vote-yes" type="button">
+                      Da ✓
+                    </button>
+                    <button className="q-vote q-vote-no" type="button">
+                      Ne ✗
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+            <p className="qp-footer">+ još 7 pitanja · ~3 minute</p>
+          </div>
         </div>
       </section>
     </>

@@ -284,18 +284,38 @@ export default function Hero() {
 
         /* ── Responsive ── */
         @media (max-width: 900px) {
-          .hero {
-            grid-template-columns: 1fr;
-            min-height: auto;
-            padding: 60px 5vw;
-          }
-          .hero-visual {
-            display: none;
-          }
-          .hero-stats {
-            gap: 16px;
-          }
+        .hero {
+          grid-template-columns: 1fr;
+          min-height: auto;
+          padding: 60px 5vw;
         }
+
+        .hero-visual {
+          display: none;
+        }
+
+        .hero-stats {
+          gap: 16px;
+        }
+
+        /* Hide distracting blobs on mobile */
+        .hero-blob {
+          display: none;
+        }
+
+        /* Stack buttons full-width */
+        .hero-btns {
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .btn-big,
+        .btn-outline {
+          width: 100%;
+          justify-content: center;
+          padding: 16px 24px;
+        }
+      }
       `}</style>
 
       <div className="hero">

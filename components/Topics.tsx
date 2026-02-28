@@ -138,6 +138,69 @@ export default function Topics() {
           border-radius: 999px;
           border: 1.5px solid rgba(255, 255, 255, 0.3);
         }
+
+        /* ── Mobile horizontal scroll ── */
+        .topics-scroll-hint {
+          display: none;
+        }
+
+        .topics-scroll-wrapper {
+          position: relative;
+        }
+
+        @media (max-width: 640px) {
+          .topics {
+            padding: 60px 0 60px 5vw;
+          }
+
+          .topics-scroll-hint {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.75rem;
+            font-family: var(--font-d);
+            margin-bottom: 12px;
+            animation: nudge 1.5s ease-in-out infinite;
+          }
+
+          @keyframes nudge {
+            0%, 100% { transform: translateX(0); }
+            50%       { transform: translateX(6px); }
+          }
+
+          .topics-scroll-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 80px;
+            height: 100%;
+            background: linear-gradient(to right, transparent, var(--ink));
+            pointer-events: none;
+            z-index: 2;
+          }
+
+          .topics-grid {
+            display: flex;
+            overflow-x: auto;
+            gap: 12px;
+            padding-right: 5vw;
+            padding-bottom: 16px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+          }
+
+          .topics-grid::-webkit-scrollbar {
+            display: none;
+          }
+
+          .topic-card {
+            flex: 0 0 72vw;
+            scroll-snap-align: start;
+          }
+        }
       `}</style>
 
       <section className="topics" id="teme">
@@ -147,24 +210,30 @@ export default function Topics() {
           Pitanja bez lakih odgovora. Tačno onakva kakva treba.
         </p>
 
-        <div className="topics-grid">
-          {TOPICS.map((topic) => (
-            <div className="topic-card" key={topic.title}>
-              <div className="topic-emoji" aria-hidden="true">
-                {topic.emoji}
-              </div>
-              <div className="topic-title">{topic.title}</div>
-              {topic.hot && <div className="topic-hot">Vruće pitanje</div>}
-            </div>
-          ))}
+        <p className="topics-scroll-hint" aria-hidden="true">
+          Prevuci →
+        </p>
 
-          {/* Mystery card */}
-          <div className="topic-card topic-card-mystery">
-            <div className="topic-emoji" aria-hidden="true">
-              ➕
-            </div>
-            <div className="topic-title topic-title-muted">
-              I još... 3 pitanja otkrivamo na licu mesta
+        <div className="topics-scroll-wrapper">
+          <div className="topics-grid">
+            {TOPICS.map((topic) => (
+              <div className="topic-card" key={topic.title}>
+                <div className="topic-emoji" aria-hidden="true">
+                  {topic.emoji}
+                </div>
+                <div className="topic-title">{topic.title}</div>
+                {topic.hot && <div className="topic-hot">Vruće pitanje</div>}
+              </div>
+            ))}
+
+            {/* Mystery card */}
+            <div className="topic-card topic-card-mystery">
+              <div className="topic-emoji" aria-hidden="true">
+                ➕
+              </div>
+              <div className="topic-title topic-title-muted">
+                I još... 3 pitanja otkrivamo na licu mesta
+              </div>
             </div>
           </div>
         </div>

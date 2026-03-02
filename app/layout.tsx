@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Syne, Plus_Jakarta_Sans } from "next/font/google";
+import { Syne, Plus_Jakarta_Sans, Poppins } from "next/font/google";
 import "./globals.css";
 
-const syne = Syne({
-  subsets: ["latin"],
-  weight: ["400", "600", "700", "800"],
+export const syne = Syne({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "600", "700"],
   variable: "--font-syne",
   display: "swap",
 });
@@ -14,6 +14,14 @@ const jakarta = Plus_Jakarta_Sans({
   weight: ["400", "500", "600"],
   style: ["normal", "italic"],
   variable: "--font-jakarta",
+  display: "swap",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-poppins",
   display: "swap",
 });
 
@@ -31,7 +39,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="sr">
-      <body className={`${syne.variable} ${jakarta.variable} font-body`}>
+      <body
+        className={`${syne.variable} ${jakarta.variable} ${poppins.variable} font-body`}
+      >
         {children}
       </body>
     </html>

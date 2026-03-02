@@ -154,8 +154,8 @@ export default function Footer() {
           <div>
             <div className="footer-brand-name">Dođi da se ne složimo</div>
             <p className="footer-brand-text">
-              Platforma za dijalog mladih. Pilot projekat u Beogradu, a zatim u
-              svim gradovima Srbije.
+              Platforma za dijalog mladih. Pilot projekat u Beogradu, a zatim i
+              u drugim mestima u Srbiji.
             </p>
           </div>
 

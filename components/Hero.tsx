@@ -5,33 +5,25 @@ import s from "./Hero.module.css";
 export default function Hero() {
   return (
     <div className={s.hero}>
-      <div className={s.heroBlobContainer} aria-hidden="true">
-        <div className={`${s.heroBlob} ${s.heroBlob1}`} />
-        <div className={`${s.heroBlob} ${s.heroBlob2}`} />
-      </div>
-
       <div className={s.heroContent}>
         <div className={s.heroEyebrow}>
           <div className={s.heroEyebrowBlink} aria-hidden="true" />
-          Beograd · Subote 12–16h · Besplatno
+          Beograd · Subota 12–16h
         </div>
 
         <h1 className={s.heroTitle}>
-          Šta ako
-          <br />
-          pričaš sa nekim
-          <br />
-          ko se <span className={s.heroTitleHighlight}>ne slaže?</span>
+          Dođi da <br />
+          se <span className={s.heroTitleHighlight}>ne složimo</span>.
         </h1>
 
         <p className={s.heroSub}>
-          <strong>Bez debate. Bez svađe.</strong> Samo kafa sa nekim ko misli
-          potpuno drugačije. Iznenadi se.
+          <strong> Bez svađe.</strong> Samo kafa sa nekim ko misli potpuno
+          drugačije. Iznenadi se.
         </p>
 
         <div className={s.heroBtns}>
           <Link className={s.btnBig} href="#prijava">
-            Prijavi se besplatno 🔥
+            Prijavi se
           </Link>
           <Link className={s.btnOutline} href="#kako">
             Kako to izgleda? →
@@ -45,7 +37,7 @@ export default function Hero() {
           </div>
           <div className={s.stat}>
             <span className={s.statNum}>☕</span>
-            <span className={s.statLabel}>kafić, ne predavaonica</span>
+            <span className={s.statLabel}>kafić, ne slušaonica</span>
           </div>
           <div className={s.stat}>
             <span className={s.statNum}>100%</span>
@@ -57,7 +49,7 @@ export default function Hero() {
       <div className={s.heroVisual}>
         <div className={s.heroPhotoFrame}>
           <Image
-            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=900&auto=format&fit=crop&q=80"
+            src="/slika2.png"
             alt="Dvoje mladih razgovaraju uz kafu"
             fill
             priority
@@ -70,12 +62,6 @@ export default function Hero() {
           />
           <div className={s.heroPhotoOverlay} aria-hidden="true" />
           <div className={s.heroPhotoTag}>☕</div>
-          <div className={s.heroPhotoCaption}>
-            <blockquote className={s.heroPhotoQuote}>
-              „Nisam promenio mišljenje. Ali sam razumeo odakle dolazi njeno."
-              <span>— Andrej, 26g · posle razgovora</span>
-            </blockquote>
-          </div>
         </div>
       </div>
     </div>

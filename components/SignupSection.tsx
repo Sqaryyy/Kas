@@ -443,8 +443,9 @@ export default function Signup() {
             </button>
 
             <p className="form-footnote">
-              Besplatno · Tvoji podaci se koriste samo za organizaciju · Uz
-              saglasnost
+              Svi podaci prikupljeni tokom prijave koriste se samo za potrebe
+              projekta, ne dele se sa trećim licima i ne koriste se u
+              marketinške svrhe van projekta.
             </p>
           </form>
         </div>

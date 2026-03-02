@@ -18,14 +18,14 @@ const STEPS: Step[] = [
     num: "02",
     emoji: "📅",
     title: "Izaberi datum",
-    text: "Odaberi subotu koja ti odgovara. Događaj traje 12–16h, dođi kad ti odgovara.",
+    text: "Odaberi subotu koja ti odgovara. Događaj traje od 12–16h, dođi kad ti odgovara.",
     accentColor: "var(--mint-500)",
   },
   {
     num: "03",
     emoji: "☕",
     title: "Dođi u kafić",
-    text: "Nema bine ni mikrofona. Samo stol, kafa i neko ko vidi svet potpuno drugačije od tebe.",
+    text: "Nema bine ni mikrofona. Samo sto, kafa i neko ko vidi svet potpuno drugačije od tebe.",
     accentColor: "var(--yellow-500)",
   },
   {

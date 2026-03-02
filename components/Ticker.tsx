@@ -1,11 +1,9 @@
 const TICKER_ITEMS = [
-  "EU ili ne EU?",
-  "Sloboda govora ima granicu?",
-  "Socijalne mreže za decu?",
-  "Beograd → Srbija",
-  "Besplatno za sve",
+  "Za ili protiv ulaska Srbije u EU?",
+  "Da li sloboda govora ima granicu?",
+  "Da li je naš život moguć bez interneta?",
   "Dođi da se ne složimo",
-  "12–16h svake subote",
+  "Subotom od 12 do 16h",
 ];
 
 export default function Ticker() {
@@ -53,8 +51,8 @@ export default function Ticker() {
         }
 
         @keyframes ticker {
-          0%   { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+          0%   { transform: translateX(-50%); }
+          100% { transform: translateX(0); }
         }
       `}</style>
 

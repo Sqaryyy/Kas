@@ -8,20 +8,20 @@ interface Reaction {
 
 const REACTIONS: Reaction[] = [
   {
-    text: "Došao sam jer me zanima kako neko može biti protiv EU. Otišao sam kući sa mnogo manje sigurnosti u sopstvene stavove. I to je bila poenta.",
+    text: "Došao sam jer me zanima kako neko može biti za ulazak Srbije u EU. Otišao sam kući sa mnogo manje sigurnosti u sopstvene stavove. I to je bila poenta.",
     name: "Stefan K.",
     info: "24g · student prava",
     avatar: "👨",
   },
   {
-    text: "Mislila sam da će biti awkward. Bilo je — prvih 5 minuta. A posle smo razgovarali 3 sata i zaboravili da je trebalo da idemo.",
+    text: "Mislila sam da će biti awkward. Bilo je — prvih 5 minuta. A posle smo razgovarali tri sata i zaboravili na vreme.",
     name: "Milica T.",
     info: "21g · grafički dizajn",
     avatar: "👩",
     bgColor: "var(--mint-100)",
   },
   {
-    text: "Nisam promenio mišljenje. Ali sam razumeo odakle dolazi to njeno. To je bio cilj, zar ne?",
+    text: "Nisam promenio mišljenje. Ali sam nju bolje razumeo. To je bio cilj, zar ne?",
     name: "Andrej M.",
     info: "26g · novinar",
     avatar: "🧑",
@@ -145,7 +145,7 @@ export default function Reactions() {
           Nismo se složili.
           <br />I to je bilo odlično.
         </h2>
-        <p className="reactions-lead">Reakcije posle prvog pilot događaja.</p>
+        <p className="reactions-lead">Reakcije posle prvog događaja.</p>
 
         <div className="reactions-grid">
           {REACTIONS.map((reaction) => (

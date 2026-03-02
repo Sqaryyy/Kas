@@ -99,7 +99,7 @@ export default function CtaBanner() {
           🤝
         </div>
 
-        <div className="cta-tag">Pilot · Beograd</div>
+        <div className="cta-tag">Beograd</div>
 
         <h2 className="cta-heading">
           Tvoj sagovornik
@@ -108,12 +108,12 @@ export default function CtaBanner() {
         </h2>
 
         <p className="cta-lead">
-          Jedno prijavljivanje. Jedna kafa. Jedan razgovor koji možda promeni
-          kako gledaš na svet.
+          Jedno prijavljivanje. Jedna kafa. Jedan razgovor koji može promeniti
+          tvoj pogled na svet.
         </p>
 
         <Link className="btn-big" href="#prijava">
-          Prijavi se besplatno →
+          Prijavi se →
         </Link>
       </section>
     </>

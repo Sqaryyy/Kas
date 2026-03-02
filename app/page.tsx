@@ -8,7 +8,7 @@ import Reactions from "@/components/Reactions";
 import CtaBanner from "@/components/CtaBanner";
 import SignupSection from "@/components/SignupSection";
 import Footer from "@/components/Footer";
-
+import News from "@/components/News";
 export default function HomePage() {
   return (
     <>
@@ -22,6 +22,7 @@ export default function HomePage() {
         <Reactions />
         <CtaBanner />
         <SignupSection />
+        <News /> 
       </main>
       <Footer />
     </>

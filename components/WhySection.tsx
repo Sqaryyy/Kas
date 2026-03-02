@@ -32,30 +32,6 @@ const WHY_POINTS: WhyPoint[] = [
   },
 ];
 
-interface ChatMessage {
-  side: "left" | "right";
-  avatar: string;
-  text: string;
-}
-
-const CHAT_MESSAGES: ChatMessage[] = [
-  {
-    side: "left",
-    avatar: "😤",
-    text: '„Sloboda govora treba da bude apsolutna. Uvek."',
-  },
-  {
-    side: "right",
-    avatar: "🤔",
-    text: '„Čekaj, šta bi bio konkretan primer gde se ti ne bi složio s tim?"',
-  },
-  {
-    side: "left",
-    avatar: "😤",
-    text: '„Hm... OK, ovo je dobar primer. Nisam razmišljao o tome ovako."',
-  },
-];
-
 export default function Why() {
   return (
     <>
@@ -72,83 +48,35 @@ export default function Why() {
         .why-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 56px;
+          gap: 0;
           align-items: center;
         }
 
-        /* ── Chat visual ── */
+        /* ── Image visual ── */
         .why-visual {
           background: var(--ink);
           border: var(--border-t);
           border-radius: 32px;
-          padding: 48px 40px;
+          padding: 40px;
           box-shadow: 12px 12px 0 var(--orange-500);
-        }
-
-        .chat {
-          display: flex;
-          flex-direction: column;
-          gap: 16px;
-        }
-
-        .chat-time {
-          font-size: 0.7rem;
-          color: rgba(255, 255, 255, 0.4);
-          margin-bottom: 4px;
-          text-align: center;
-        }
-
-        .msg {
-          display: flex;
-          gap: 12px;
-          align-items: flex-end;
-        }
-
-        .msg-right {
-          flex-direction: row-reverse;
-        }
-
-        .msg-avatar {
-          width: 36px;
-          height: 36px;
-          border-radius: 50%;
-          border: 2px solid rgba(255, 255, 255, 0.3);
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 1.1rem;
-          flex-shrink: 0;
         }
 
-        .msg-bubble {
-          background: rgba(255, 255, 255, 0.12);
-          color: white;
-          padding: 12px 16px;
-          border-radius: 18px;
-          font-size: 0.9rem;
-          max-width: 240px;
-          line-height: 1.5;
-          border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .msg-bubble-right {
-          background: var(--orange-500);
-        }
-
-        .chat-result {
-          margin-top: 24px;
-          background: var(--mint-500);
-          color: var(--ink);
+        .why-visual-img {
+          width: 100%;
+          height: auto;
+          display: block;
           border-radius: 16px;
-          padding: 14px 20px;
-          font-family: var(--font-d);
-          font-weight: 700;
-          font-size: 0.9rem;
-          text-align: center;
-          border: var(--border);
+          object-fit: contain;
         }
 
         /* ── Right column ── */
+        .why-text {
+          padding-left: 120px;
+        }
+
         .section-tag {
           display: inline-flex;
           align-items: center;
@@ -232,37 +160,28 @@ export default function Why() {
           .why-grid {
             grid-template-columns: 1fr;
           }
+
+          .why-text {
+            padding-left: 0;
+            padding-top: 40px;
+          }
         }
       `}</style>
 
       <section className="why" id="zasto">
         <div className="why-inner">
           <div className="why-grid">
-            {/* ── Left: Chat visual ── */}
+            {/* ── Left: Image visual ── */}
             <div className="why-visual" aria-hidden="true">
-              <div className="chat">
-                <p className="chat-time">Posle razgovora o slobodi govora...</p>
-                {CHAT_MESSAGES.map((msg, i) => (
-                  <div
-                    className={`msg${msg.side === "right" ? " msg-right" : ""}`}
-                    key={i}
-                  >
-                    <div className="msg-avatar">{msg.avatar}</div>
-                    <div
-                      className={`msg-bubble${msg.side === "right" ? " msg-bubble-right" : ""}`}
-                    >
-                      {msg.text}
-                    </div>
-                  </div>
-                ))}
-                <div className="chat-result">
-                  🤝 Nisu se složili — i obojici je bilo super.
-                </div>
-              </div>
+              <img
+                src="/slika1.png"
+                alt="Ljudi razgovaraju uz kafu"
+                className="why-visual-img"
+              />
             </div>
 
             {/* ── Right: Text + points ── */}
-            <div>
+            <div className="why-text">
               <div className="section-tag">Zašto baš ovako?</div>
               <h2 className="why-heading">
                 Soba za razgovor

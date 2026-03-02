@@ -6,18 +6,12 @@ interface Topic {
 
 const TOPICS: Topic[] = [
   {
-    emoji: "🇪🇺",
-    title: "Da li Srbija treba da uđe u EU?",
-    hot: true,
-  },
-  {
     emoji: "📱",
     title: "Treba li zabraniti socijalne mreže za mlađe od 14?",
   },
   {
     emoji: "🗣️",
     title: "Postoji li granica slobode govora?",
-    hot: true,
   },
   {
     emoji: "🌈",
@@ -25,15 +19,19 @@ const TOPICS: Topic[] = [
   },
   {
     emoji: "🏠",
-    title: "Ostati u Srbiji ili odseliti se?",
+    title: "Ostati u Srbiji ili se iseliti?",
   },
   {
     emoji: "🤝",
-    title: "Kako je biti Roma u Srbiji danas?",
+    title: "Kako je biti Rom ili pripadnik manjine u Srbiji danas?",
+  },
+  {
+    emoji: "🇪🇺",
+    title: "Da li Srbija treba da uđe u EU?",
   },
   {
     emoji: "💼",
-    title: "Da li je uspeh stvar rada ili privilegije?",
+    title: "Da li je uspeh stvar rada ili privilegija?",
   },
 ];
 
@@ -207,7 +205,7 @@ export default function Topics() {
         <div className="topics-tag">Teme razgovora</div>
         <h2 className="topics-heading">O čemu ćete pričati?</h2>
         <p className="topics-lead">
-          Pitanja bez lakih odgovora. Tačno onakva kakva treba.
+          Pitanja bez lakih odgovora. Tačno onakva kakva treba da budu.
         </p>
 
         <p className="topics-scroll-hint" aria-hidden="true">
@@ -231,9 +229,7 @@ export default function Topics() {
               <div className="topic-emoji" aria-hidden="true">
                 ➕
               </div>
-              <div className="topic-title topic-title-muted">
-                I još... 3 pitanja otkrivamo na licu mesta
-              </div>
+              <div className="topic-title topic-title">I još tema...</div>
             </div>
           </div>
         </div>

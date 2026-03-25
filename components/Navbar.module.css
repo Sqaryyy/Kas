@@ -31,6 +31,13 @@
   flex-shrink: 0;
 }
 
+.nav-kas {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
 .nav-links {
   display: flex;
   gap: 24px;

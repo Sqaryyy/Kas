@@ -15,14 +15,14 @@ const FOOTER_COLUMNS: FooterColumn[] = [
   {
     heading: "Projekat",
     links: [
-      { label: "O platformi", href: "#" },
+      { label: "O platformi", href: "/o-platformi" },
       { label: "Kako funkcioniše?", href: "#kako" },
       { label: "Starter kartica", href: "#" },
       { label: "Kontakt", href: "#" },
     ],
   },
   {
-    heading: "Gradovi",
+    heading: "Gradovi i mesta",
     links: [
       { label: "Beograd ✓", href: "#" },
       { label: "Novi Sad (uskoro)", href: "#", muted: true },

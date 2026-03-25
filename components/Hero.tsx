@@ -49,14 +49,14 @@ export default function Hero() {
       <div className={s.heroVisual}>
         <div className={s.heroPhotoFrame}>
           <Image
-            src="/slika2.png"
+            src="/novo3.jpeg"
             alt="Dvoje mladih razgovaraju uz kafu"
             fill
             priority
             sizes="(max-width: 900px) 0px, 50vw"
             style={{
               objectFit: "cover",
-              objectPosition: "center top",
+              objectPosition: "center 80%",
               filter: "saturate(0.88)",
             }}
           />

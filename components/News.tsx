@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const ARTICLES = [
   {
     id: 1,
@@ -7,9 +9,7 @@ const ARTICLES = [
       "Zašto mladi sve više izbegavaju razgovor sa onima koji misle drugačije?",
     excerpt:
       "Algoritmi nas zatvaraju u mehure. Ali šta se desi kad izađeš iz svog? Razgovarali smo sa učesnicima prvog dijaloga mladih.",
-    image:
-      "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80",
-    tagColor: "var(--lilac-500)",
+    image: "/novo1.jpeg",
     category_color: "var(--lilac-500)",
   },
   {
@@ -19,9 +19,7 @@ const ARTICLES = [
     title: '„Nisam očekivao da ćemo se složiti ni oko čega — ali jesmo."',
     excerpt:
       "Marko i Jovana su sedeli jedno naspram drugog sa potpuno suprotnim stavovima o EU. Ovo je njihova priča.",
-    image:
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80",
-    tagColor: "var(--orange-500)",
+    image: "/novo2.jpeg",
     category_color: "var(--orange-500)",
   },
   {
@@ -31,9 +29,7 @@ const ARTICLES = [
     title: "Koliko zapravo znamo o stavovima svojih vršnjaka?",
     excerpt:
       "Pitali smo 200 mladih da pogode šta njihovi prijatelji misle o ključnim temama. Rezultati su bili iznenađujući.",
-    image:
-      "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80",
-    tagColor: "var(--mint-700)",
+    image: "/novo1.jpeg",
     category_color: "var(--mint-700)",
   },
 ];
@@ -136,10 +132,6 @@ export default function News() {
         }
 
         .news-card-thumb img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          display: block;
           transition: transform 0.4s ease;
         }
 
@@ -269,7 +261,13 @@ export default function News() {
             {ARTICLES.map((article) => (
               <div className="news-card" key={article.id}>
                 <div className="news-card-thumb">
-                  <img src={article.image} alt={article.title} />
+                  <Image
+                    src={article.image}
+                    alt={article.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    style={{ objectFit: "cover" }}
+                  />
                 </div>
                 <div className="news-card-body">
                   <div className="news-card-meta">

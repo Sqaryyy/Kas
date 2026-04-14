@@ -1,36 +1,64 @@
+import {
+  Smartphone,
+  MessageSquare,
+  Rainbow,
+  Home,
+  Users,
+  Globe,
+  Briefcase,
+  Plus,
+} from "lucide-react";
+import type { ComponentType } from "react";
+
 interface Topic {
-  emoji: string;
+  icon: ComponentType<{ size?: number; strokeWidth?: number; color?: string }>;
+  color: string;
+  bg: string;
   title: string;
   hot?: boolean;
 }
 
 const TOPICS: Topic[] = [
   {
-    emoji: "📱",
+    icon: Smartphone,
+    color: "#60a5fa",
+    bg: "rgba(96, 165, 250, 0.15)",
     title: "Treba li zabraniti socijalne mreže za mlađe od 14?",
   },
   {
-    emoji: "🗣️",
+    icon: MessageSquare,
+    color: "#f97316",
+    bg: "rgba(249, 115, 22, 0.15)",
     title: "Postoji li granica slobode govora?",
   },
   {
-    emoji: "🌈",
+    icon: Rainbow,
+    color: "#e879f9",
+    bg: "rgba(232, 121, 249, 0.15)",
     title: "Kako je biti deo LGBT zajednice u Srbiji?",
   },
   {
-    emoji: "🏠",
+    icon: Home,
+    color: "#34d399",
+    bg: "rgba(52, 211, 153, 0.15)",
     title: "Ostati u Srbiji ili se iseliti?",
   },
   {
-    emoji: "🤝",
+    icon: Users,
+    color: "#fbbf24",
+    bg: "rgba(251, 191, 36, 0.15)",
     title: "Kako je biti Rom ili pripadnik manjine u Srbiji danas?",
   },
   {
-    emoji: "🇪🇺",
+    icon: Globe,
+    color: "#38bdf8",
+    bg: "rgba(56, 189, 248, 0.15)",
     title: "Da li Srbija treba da uđe u EU?",
   },
   {
-    emoji: "💼",
+    icon: Briefcase,
+    color: "#a78bfa",
+    bg: "rgba(167, 139, 250, 0.15)",
     title: "Da li je uspeh stvar rada ili privilegija?",
   },
 ];
@@ -96,8 +124,8 @@ export default function Topics() {
 
         .topic-card:hover {
           transform: translate(-3px, -3px);
-          background: rgba(255, 255, 255, 0.15);
-          border-color: var(--orange-300);
+          background: rgba(255, 255, 255, 0.13);
+          border-color: rgba(255, 255, 255, 0.35);
         }
 
         .topic-card-mystery {
@@ -105,9 +133,19 @@ export default function Topics() {
           border-color: rgba(255, 255, 255, 0.3);
         }
 
-        .topic-emoji {
-          font-size: 2rem;
-          margin-bottom: 10px;
+        .topic-icon-wrap {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 48px;
+          height: 48px;
+          border-radius: 14px;
+          margin-bottom: 14px;
+          transition: transform 0.15s;
+        }
+
+        .topic-card:hover .topic-icon-wrap {
+          transform: scale(1.1);
         }
 
         .topic-title {
@@ -116,10 +154,6 @@ export default function Topics() {
           font-size: 0.95rem;
           color: white;
           line-height: 1.3;
-        }
-
-        .topic-title-muted {
-          color: rgba(255, 255, 255, 0.5);
         }
 
         .topic-hot {
@@ -137,7 +171,6 @@ export default function Topics() {
           border: 1.5px solid rgba(255, 255, 255, 0.3);
         }
 
-        /* ── Mobile horizontal scroll ── */
         .topics-scroll-hint {
           display: none;
         }
@@ -214,22 +247,37 @@ export default function Topics() {
 
         <div className="topics-scroll-wrapper">
           <div className="topics-grid">
-            {TOPICS.map((topic) => (
-              <div className="topic-card" key={topic.title}>
-                <div className="topic-emoji" aria-hidden="true">
-                  {topic.emoji}
+            {TOPICS.map((topic) => {
+              const Icon = topic.icon;
+              return (
+                <div className="topic-card" key={topic.title}>
+                  <div
+                    className="topic-icon-wrap"
+                    aria-hidden="true"
+                    style={{ background: topic.bg }}
+                  >
+                    <Icon size={24} strokeWidth={1.75} color={topic.color} />
+                  </div>
+                  <div className="topic-title">{topic.title}</div>
+                  {topic.hot && <div className="topic-hot">Vruće pitanje</div>}
                 </div>
-                <div className="topic-title">{topic.title}</div>
-                {topic.hot && <div className="topic-hot">Vruće pitanje</div>}
-              </div>
-            ))}
+              );
+            })}
 
             {/* Mystery card */}
             <div className="topic-card topic-card-mystery">
-              <div className="topic-emoji" aria-hidden="true">
-                ➕
+              <div
+                className="topic-icon-wrap"
+                aria-hidden="true"
+                style={{ background: "rgba(255,255,255,0.08)" }}
+              >
+                <Plus
+                  size={24}
+                  strokeWidth={1.75}
+                  color="rgba(255,255,255,0.5)"
+                />
               </div>
-              <div className="topic-title topic-title">I još tema...</div>
+              <div className="topic-title">I još tema...</div>
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Coffee } from "lucide-react";
 import s from "./Hero.module.css";
 
 export default function Hero() {
@@ -36,7 +37,9 @@ export default function Hero() {
             <span className={s.statLabel}>godina</span>
           </div>
           <div className={s.stat}>
-            <span className={s.statNum}>☕</span>
+            <span className={s.statNum}>
+              <Coffee size={22} strokeWidth={1.75} color="var(--orange-500)" />
+            </span>
             <span className={s.statLabel}>kafić, ne slušaonica</span>
           </div>
           <div className={s.stat}>
@@ -61,7 +64,9 @@ export default function Hero() {
             }}
           />
           <div className={s.heroPhotoOverlay} aria-hidden="true" />
-          <div className={s.heroPhotoTag}>☕</div>
+          <div className={s.heroPhotoTag}>
+            <Coffee size={20} strokeWidth={1.75} color="white" />
+          </div>
         </div>
       </div>
     </div>

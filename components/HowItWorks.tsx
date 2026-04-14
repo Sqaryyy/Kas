@@ -1,6 +1,16 @@
+import {
+  ClipboardList,
+  CalendarDays,
+  Coffee,
+  MessageCircle,
+} from "lucide-react";
+import type { ComponentType } from "react";
+
 interface Step {
   num: string;
-  emoji: string;
+  icon: ComponentType<{ size?: number; strokeWidth?: number; color?: string }>;
+  iconColor: string;
+  iconBg: string;
   title: string;
   text: string;
   accentColor: string;
@@ -9,28 +19,36 @@ interface Step {
 const STEPS: Step[] = [
   {
     num: "01",
-    emoji: "📝",
+    icon: ClipboardList,
+    iconColor: "#f97316",
+    iconBg: "rgba(249, 115, 22, 0.12)",
     title: "Prijavi se online",
     text: "Popuniš par pitanja o temama koje te zanimaju. To nam pomaže da te spojimo sa osobom koja misli drugačije.",
     accentColor: "var(--orange-500)",
   },
   {
     num: "02",
-    emoji: "📅",
+    icon: CalendarDays,
+    iconColor: "#10b981",
+    iconBg: "rgba(16, 185, 129, 0.12)",
     title: "Izaberi datum",
     text: "Odaberi datum koja ti odgovara. Događaj traje od 12–16h.",
     accentColor: "var(--mint-500)",
   },
   {
     num: "03",
-    emoji: "☕",
+    icon: Coffee,
+    iconColor: "#d97706",
+    iconBg: "rgba(217, 119, 6, 0.12)",
     title: "Dođi u kafić",
     text: "Nema bine ni mikrofona. Samo sto, kafa i neko ko vidi svet potpuno drugačije od tebe.",
     accentColor: "var(--yellow-500)",
   },
   {
     num: "04",
-    emoji: "💬",
+    icon: MessageCircle,
+    iconColor: "#8b5cf6",
+    iconBg: "rgba(139, 92, 246, 0.12)",
     title: "Razgovarajte",
     text: "Uz pomoć starter kartice pokreneš temu. Odatle — videćeš. Možda se ni malo ne složite. I to je OK.",
     accentColor: "var(--lilac-500)",
@@ -121,9 +139,19 @@ export default function HowItWorks() {
           margin-bottom: 12px;
         }
 
-        .step-emoji {
-          font-size: 2.2rem;
-          margin-bottom: 12px;
+        .step-icon-wrap {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 48px;
+          height: 48px;
+          border-radius: 14px;
+          margin-bottom: 14px;
+          transition: transform 0.15s;
+        }
+
+        .step:hover .step-icon-wrap {
+          transform: scale(1.1);
         }
 
         .step-title {
@@ -152,23 +180,30 @@ export default function HowItWorks() {
         </p>
 
         <div className="steps">
-          {STEPS.map((step) => (
-            <div className="step" key={step.num}>
-              <div
-                className="step-accent"
-                style={{ background: step.accentColor }}
-                aria-hidden="true"
-              />
-              <div className="step-num" aria-hidden="true">
-                {step.num}
+          {STEPS.map((step) => {
+            const Icon = step.icon;
+            return (
+              <div className="step" key={step.num}>
+                <div
+                  className="step-accent"
+                  style={{ background: step.accentColor }}
+                  aria-hidden="true"
+                />
+                <div className="step-num" aria-hidden="true">
+                  {step.num}
+                </div>
+                <div
+                  className="step-icon-wrap"
+                  aria-hidden="true"
+                  style={{ background: step.iconBg }}
+                >
+                  <Icon size={24} strokeWidth={1.75} color={step.iconColor} />
+                </div>
+                <h3 className="step-title">{step.title}</h3>
+                <p className="step-text">{step.text}</p>
               </div>
-              <div className="step-emoji" aria-hidden="true">
-                {step.emoji}
-              </div>
-              <h3 className="step-title">{step.title}</h3>
-              <p className="step-text">{step.text}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
     </>

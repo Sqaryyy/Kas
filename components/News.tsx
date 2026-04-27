@@ -19,7 +19,7 @@ const ARTICLES = [
     title: '„Nisam očekivao da ćemo se složiti ni oko čega — ali jesmo."',
     excerpt:
       "Marko i Jovana su sedeli jedno naspram drugog sa potpuno suprotnim stavovima o EU. Ovo je njihova priča.",
-    image: "/novo2.jpeg",
+    image: "/slika3.jpeg",
     category_color: "var(--orange-500)",
   },
   {
@@ -29,7 +29,7 @@ const ARTICLES = [
     title: "Koliko zapravo znamo o stavovima svojih vršnjaka?",
     excerpt:
       "Pitali smo 200 mladih da pogode šta njihovi prijatelji misle o ključnim temama. Rezultati su bili iznenađujući.",
-    image: "/novo1.jpeg",
+    image: "/slika7.jpeg",
     category_color: "var(--mint-700)",
   },
 ];
@@ -266,7 +266,10 @@ export default function News() {
                     alt={article.title}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    style={{ objectFit: "cover" }}
+                    style={{
+                      objectFit: "cover",
+                      objectPosition: article.id === 2 ? "60% 27%" : "center",
+                    }}
                   />
                 </div>
                 <div className="news-card-body">

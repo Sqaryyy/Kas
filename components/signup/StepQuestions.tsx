@@ -34,6 +34,7 @@ export default function StepQuestions({
               value={form[q.field as keyof FormData]}
               onChange={onField}
               labels={q.scaleLabels}
+              allLabels={q.allLabels}
             />
           ) : (
             <QuestionChoice

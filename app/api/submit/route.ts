@@ -29,41 +29,38 @@ export async function POST(req: NextRequest) {
       grad,
       datum,
 
-      // Intro questions
+      // Q1 — Promena mišljenja
       q0_promena_misljenja,
-      q0_suprotan_stav,
 
-      // Section II — Politička orijentacija
-      q1_protesti_srbija,
+      // Q2 — Institucije
       q2_institucije_interes,
+
+      // Q3 — Veze vs obrazovanje
       q3_veze_vs_obrazovanje,
+
+      // Q4 — Protesti
       q4_protesti_generalno,
 
-      // Section III — Društvene vrednosti
-      q5_uloga_drzave,
+      // Q5 — Otvorenost promenama
       q6_otvorenost_promenama,
 
-      // Section IV — Položaj žena
-      q7_uloga_zene,
+      // Q6 — Seksistički komentari
       q8_seksisticki_komentari,
 
-      // Section V — EU
+      // Q7 — EU članstvo
       q9_eu_clanstvo,
-      q10_referendum_eu,
 
-      // Section VI — Sloboda govora
+      // Q8 — Sloboda govora
       q11_sloboda_govora,
-      q12_regulacija_mreza,
+
+      // Q9 — Zabrana mreža maloletnici
       q13_zabrana_mreza_maloletnici,
 
-      // Section VII — Odlazak mladih
+      // Q10 — Odlazak
       q14_odlazak_razmisljanje,
-      q15_odlazak_plan,
 
-      // Section VIII — Manjinska prava
-      q16_prava_manjina,
-      q17_deljenje_stana,
-      q18_prijatelj_isti_pol,
+      // Q11 — Različitost (merged minority/diversity question)
+      q11_razlicitost,
 
       // Demografija
       pol,
@@ -90,32 +87,16 @@ export async function POST(req: NextRequest) {
       datum,
 
       q0_promena_misljenja,
-      q0_suprotan_stav,
-
-      q1_protesti_srbija,
       q2_institucije_interes,
       q3_veze_vs_obrazovanje,
       q4_protesti_generalno,
-
-      q5_uloga_drzave,
       q6_otvorenost_promenama,
-
-      q7_uloga_zene,
       q8_seksisticki_komentari,
-
       q9_eu_clanstvo,
-      q10_referendum_eu,
-
       q11_sloboda_govora,
-      q12_regulacija_mreza,
       q13_zabrana_mreza_maloletnici,
-
       q14_odlazak_razmisljanje,
-      q15_odlazak_plan,
-
-      q16_prava_manjina,
-      q17_deljenje_stana,
-      q18_prijatelj_isti_pol,
+      q11_razlicitost,
 
       pol,
       godine_grupa,
@@ -132,14 +113,17 @@ export async function POST(req: NextRequest) {
     if (!existing.data.values || existing.data.values.length === 0) {
       const headers = [
         "Timestamp", "Ime", "Prezime", "Email", "Telefon", "Godine", "Grad", "Datum",
-        "Q0_Promena_misljenja", "Q0_Suprotan_stav",
-        "Q1_Protesti_opis", "Q2_Institucije", "Q3_Veze_vs_obrazovanje", "Q4_Protesti_stav",
-        "Q5_Uloga_drzave", "Q6_Otvorenost_promenama",
-        "Q7_Uloga_zene", "Q8_Seksisticki_komentari",
-        "Q9_EU_clanstvo", "Q10_Referendum_EU",
-        "Q11_Sloboda_govora", "Q12_Regulacija_mreza", "Q13_Zabrana_maloletnici",
-        "Q14_Odlazak_razmisljanje", "Q15_Odlazak_plan",
-        "Q16_Prava_manjina", "Q17_Deljenje_stana", "Q18_Prijatelj_isti_pol",
+        "Q1_Promena_misljenja",
+        "Q2_Institucije",
+        "Q3_Veze_vs_obrazovanje",
+        "Q4_Protesti",
+        "Q5_Otvorenost_promenama",
+        "Q6_Seksisticki_komentari",
+        "Q7_EU_clanstvo",
+        "Q8_Sloboda_govora",
+        "Q9_Zabrana_maloletnici",
+        "Q10_Odlazak",
+        "Q11_Razlicitost",
         "Pol", "Godine_grupa", "Obrazovanje", "Mesto",
       ];
 

@@ -80,7 +80,7 @@ export default function SignupSection() {
       );
     }
     if (currentStep.type === "demografija") {
-      return !!(form.pol && form.godine_grupa && form.obrazovanje);
+      return !!(form.pol && form.obrazovanje);
     }
     return true;
   }

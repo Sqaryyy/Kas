@@ -11,10 +11,10 @@
 :root {
   --cream:       #FFF8F0;
   --warm-white:  #FFFCF7;
-  --orange-100:  #FFF0E0;
-  --orange-300:  #FFB97A;
-  --orange-500:  #FF7A35;
-  --orange-700:  #D94F00;
+  --orange-100: #E0F8F9;  /* very light teal tint — replaces the warm cream */
+  --orange-300: #5DD4D7;  /* soft mid teal — replaces the light orange */
+  --orange-500: #00b9be;  /* your new primary */
+  --orange-700: #007E82;  /* deep teal — replaces the burnt orange */
   --mint-100:    #E5FFF5;
   --mint-500:    #00D67E;
   --mint-700:    #008C52;

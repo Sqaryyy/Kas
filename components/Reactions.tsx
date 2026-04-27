@@ -34,7 +34,7 @@ export default function Reactions() {
     <>
       <style>{`
         .reactions {
-          background: var(--orange-100);
+           background: var(--cream);
           border-top: var(--border);
           border-bottom: var(--border);
           padding: 100px 5vw;
@@ -98,7 +98,8 @@ export default function Reactions() {
           font-size: 5rem;
           font-weight: 800;
           line-height: 1;
-          color: var(--orange-300);
+          color: #00b9be;
+          opacity: 0.25;
         }
 
         .reaction-text {

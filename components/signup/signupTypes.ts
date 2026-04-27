@@ -10,7 +10,6 @@ export interface FormData {
   datum: string;
   // Demografija
   pol: string;
-  godine_grupa: string;
   obrazovanje: string;
   mesto: string;
   // Q1
@@ -39,7 +38,7 @@ export interface FormData {
 
 export const EMPTY_FORM: FormData = {
   ime: "", prezime: "", email: "", telefon: "", godine: "", grad: "", datum: "",
-  pol: "", godine_grupa: "", obrazovanje: "", mesto: "",
+  pol: "", obrazovanje: "", mesto: "",
   q0_promena_misljenja: "",
   q2_institucije_interes: "",
   q3_veze_vs_obrazovanje: "",

@@ -60,7 +60,7 @@ export default function HowItWorks() {
     <>
       <style>{`
         .how {
-          background: var(--warm-white);
+          background: var(--cream);
           border-top: var(--border);
           border-bottom: var(--border);
           padding: 100px 5vw;

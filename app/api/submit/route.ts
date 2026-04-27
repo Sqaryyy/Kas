@@ -64,7 +64,6 @@ export async function POST(req: NextRequest) {
 
       // Demografija
       pol,
-      godine_grupa,
       obrazovanje,
       mesto,
     } = body;
@@ -99,7 +98,6 @@ export async function POST(req: NextRequest) {
       q11_razlicitost,
 
       pol,
-      godine_grupa,
       obrazovanje,
       mesto,
     ];
@@ -124,7 +122,7 @@ export async function POST(req: NextRequest) {
         "Q9_Zabrana_maloletnici",
         "Q10_Odlazak",
         "Q11_Razlicitost",
-        "Pol", "Godine_grupa", "Obrazovanje", "Mesto",
+        "Pol", "Obrazovanje", "Mesto",
       ];
 
       await sheets.spreadsheets.values.update({

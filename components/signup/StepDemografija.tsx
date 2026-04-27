@@ -30,16 +30,6 @@ export default function StepDemografija({ form, onField, onChange }: Props) {
       </div>
 
       <div className="form-group" style={{ marginTop: 24 }}>
-        <label className="form-label">Godine</label>
-        <QuestionChoice
-          field="godine_grupa"
-          value={form.godine_grupa}
-          onChange={onField}
-          options={["18–19", "20–21", "22–23", "24–25"]}
-        />
-      </div>
-
-      <div className="form-group" style={{ marginTop: 24 }}>
         <label className="form-label">Najviši nivo obrazovanja</label>
         <QuestionChoice
           field="obrazovanje"

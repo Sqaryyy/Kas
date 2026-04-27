@@ -21,10 +21,6 @@ export default function StepQuestions({
 }: Props) {
   return (
     <>
-      <div className="step-eyebrow" style={{ marginBottom: 4 }}>
-        {sectionId}
-      </div>
-      <h2 className="step-title">{title}</h2>
       {questions.map((q) => (
         <div className="question-block" key={q.field}>
           <div className="question-label">{q.label}</div>

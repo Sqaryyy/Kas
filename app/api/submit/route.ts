@@ -162,10 +162,10 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error("Sheets API error:", error);
-    return NextResponse.json(
-      { success: false, error: "Greška pri čuvanju podataka." },
-      { status: 500 }
-    );
-  }
+  console.error("Sheets API error:", error);
+  return NextResponse.json(
+    { success: false, error: String(error) },  // ← this line
+    { status: 500 }
+  );
+}
 }

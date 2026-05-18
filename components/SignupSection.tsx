@@ -3,9 +3,9 @@
 import { useState } from "react";
 
 const DATES = [
-  "Subota, 15. mart — 12–16h",
-  "Subota, 22. mart — 12–16h",
-  "Subota, 29. mart — 12–16h",
+  "10. jun 2026. 11-13h",
+  "10. jun 2026. 13.30-15.30h",
+  "10. jun 2026. 16-18h",
 ];
 
 interface FormState {

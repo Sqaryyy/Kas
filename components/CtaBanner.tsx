@@ -104,7 +104,7 @@ export default function CtaBanner() {
         <h2 className="cta-heading">
           Tvoj sagovornik
           <br />
-          te čeka u subotu.
+          te čeka 10. juna 2026.
         </h2>
 
         <p className="cta-lead">

@@ -8,23 +8,23 @@ interface Reaction {
 
 const REACTIONS: Reaction[] = [
   {
-    text: "Došao sam jer me zanima kako neko može biti za ulazak Srbije u EU. Otišao sam kući sa mnogo manje sigurnosti u sopstvene stavove. I to je bila poenta.",
-    name: "Stefan K.",
-    info: "24g · student prava",
-    avatar: "👨",
+    text: "Ovde uskoro stižu utisci učesnika",
+    name: "Uskoro",
+    info: "Učesnik 1",
+    avatar: "👤",
   },
   {
-    text: "Mislila sam da će biti awkward. Bilo je — prvih 5 minuta. A posle smo razgovarali tri sata i zaboravili na vreme.",
-    name: "Milica T.",
-    info: "21g · grafički dizajn",
-    avatar: "👩",
+    text: "Ovde uskoro stižu utisci učesnika",
+    name: "Uskoro",
+    info: "Učesnik 2",
+    avatar: "👤",
     bgColor: "var(--mint-100)",
   },
   {
-    text: "Nisam promenio mišljenje. Ali sam nju bolje razumeo. To je bio cilj, zar ne?",
-    name: "Andrej M.",
-    info: "26g · novinar",
-    avatar: "🧑",
+    text: "Ovde uskoro stižu utisci učesnika",
+    name: "Uskoro",
+    info: "Učesnik 3",
+    avatar: "👤",
     bgColor: "var(--lilac-100)",
   },
 ];
@@ -34,7 +34,7 @@ export default function Reactions() {
     <>
       <style>{`
         .reactions {
-           background: var(--cream);
+          background: var(--cream);
           border-top: var(--border);
           border-bottom: var(--border);
           padding: 100px 5vw;
@@ -107,6 +107,8 @@ export default function Reactions() {
           line-height: 1.6;
           margin-bottom: 20px;
           padding-top: 24px;
+          font-style: italic;
+          color: var(--ink-60);
         }
 
         .reaction-person {
@@ -126,6 +128,8 @@ export default function Reactions() {
           font-size: 1.4rem;
           background: var(--cream);
           flex-shrink: 0;
+          filter: grayscale(1);
+          opacity: 0.5;
         }
 
         .reaction-name {
@@ -141,18 +145,21 @@ export default function Reactions() {
       `}</style>
 
       <section className="reactions">
-        <div className="section-tag">Šta kažu učesnici?</div>
+        <div className="section-tag">Utisci</div>
         <h2 className="reactions-heading">
-          Nismo se složili.
-          <br />I to je bilo odlično.
+          Šta kažu oni koji su
+          <br />
+          već bili deo dijaloga?
         </h2>
-        <p className="reactions-lead">Reakcije posle prvog događaja.</p>
+        <p className="reactions-lead">
+          Utisci polaznika stižu ubrzo nakon završetka prvog ciklusa.
+        </p>
 
         <div className="reactions-grid">
-          {REACTIONS.map((reaction) => (
+          {REACTIONS.map((reaction, index) => (
             <blockquote
               className="reaction-card"
-              key={reaction.name}
+              key={index}
               style={
                 reaction.bgColor ? { background: reaction.bgColor } : undefined
               }

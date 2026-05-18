@@ -1,5 +1,7 @@
+import { Coffee, Target, Brain, Lock } from "lucide-react";
+
 interface WhyPoint {
-  emoji: string;
+  icon: React.ReactNode;
   colorClass: string;
   title: string;
   text: string;
@@ -7,28 +9,28 @@ interface WhyPoint {
 
 const WHY_POINTS: WhyPoint[] = [
   {
-    emoji: "☕",
+    icon: <Coffee size={22} />,
     colorClass: "why-icon-o",
     title: "Opuštenost kafića radi",
-    text: "Nije konferencija. Nije debatni klub. Kafa menja atmosferu — smanjuje napetost i povećava iskrenost.",
+    text: "Nije konferencija. Nije debatni klub. Kafa menja atmosferu, smanjuje napetost i povećava iskrenost.",
   },
   {
-    emoji: "🎯",
+    icon: <Target size={22} />,
     colorClass: "why-icon-m",
     title: "Prave teme, pravi razgovori",
-    text: "EU, sloboda govora, manjinska prava — teme koje zaista dele. Ne akademske diskusije.",
+    text: "EU, sloboda govora, manjinska prava su teme koje zaista dele. Ne akademske diskusije.",
   },
   {
-    emoji: "🧠",
+    icon: <Brain size={22} />,
     colorClass: "why-icon-y",
     title: "Cilj nije ubediti",
     text: "Cilj je razumeti. Ni pobednici ni gubitnici. Samo dvoje ili više ljudi koji su malo bolje razumeli svet.",
   },
   {
-    emoji: "🔒",
+    icon: <Lock size={22} />,
     colorClass: "why-icon-l",
     title: "Bezbedna atmosfera",
-    text: "Psiholozi su prisutni u prostoru. Starter kartica postavlja osnovna pravila razgovora.",
+    text: "Psiholozi su tu da daju profesionalnu podršku. Starter kartica postavlja osnovna pravila razgovora.",
   },
 ];
 
@@ -47,7 +49,7 @@ export default function Why() {
 
         .why-grid {
           display: grid;
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: 1.3fr 1fr;
           gap: 0;
           align-items: center;
         }
@@ -57,19 +59,22 @@ export default function Why() {
           background: var(--ink);
           border: var(--border-t);
           border-radius: 32px;
-          padding: 40px;
+          padding: 0;
           box-shadow: 12px 12px 0 var(--orange-500);
           display: flex;
           align-items: center;
           justify-content: center;
+          aspect-ratio: 1 / 1;
+          overflow: hidden;
         }
 
         .why-visual-img {
           width: 100%;
-          height: auto;
-          display: block;
+          height: 100%;
+          object-fit: cover;
+          object-position: center top;
           border-radius: 16px;
-          object-fit: contain;
+          display: block;
         }
 
         /* ── Right column ── */
@@ -133,7 +138,6 @@ export default function Why() {
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 1.4rem;
           box-shadow: 3px 3px 0 var(--ink);
         }
 
@@ -174,7 +178,7 @@ export default function Why() {
             {/* ── Left: Image visual ── */}
             <div className="why-visual" aria-hidden="true">
               <img
-                src="/slika1.png"
+                src="/b.jpg"
                 alt="Ljudi razgovaraju uz kafu"
                 className="why-visual-img"
               />
@@ -200,7 +204,7 @@ export default function Why() {
                       className={`why-icon ${point.colorClass}`}
                       aria-hidden="true"
                     >
-                      {point.emoji}
+                      {point.icon}
                     </div>
                     <div>
                       <h3 className="why-point-title">{point.title}</h3>

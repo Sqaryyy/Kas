@@ -421,7 +421,7 @@ export default function SignupIntro({ form, onChange, onStart }: Props) {
               onChange={onChange}
               onBlur={handleBlur}
             >
-              <option value="">Izaberi subotu...</option>
+              <option value="">Izaberi termin</option>
               {DATES.map((d) => (
                 <option key={d} value={d}>
                   {d}

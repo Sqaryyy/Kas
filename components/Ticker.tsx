@@ -3,7 +3,7 @@ const TICKER_ITEMS = [
   "Da li sloboda govora ima granicu?",
   "Da li je naš život moguć bez interneta?",
   "Dođi da se ne složimo",
-  "Subotom od 12 do 16h",
+  "10. jun 2026. Beograd",
 ];
 
 export default function Ticker() {

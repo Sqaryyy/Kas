@@ -1,35 +1,41 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const ARTICLES = [
   {
     id: 1,
-    category: "Razgovor",
+    slug: "kada-nasilje-postane-normalno",
+    category: "Bezbednost",
     date: "15. mart 2025",
-    title:
-      "Zašto mladi sve više izbegavaju razgovor sa onima koji misle drugačije?",
+    author: "Maša Vračar, alumnistkinja Fondacije Konrad Adenauer",
+    title: 'Kada nasilje postane „normalno"',
     excerpt:
-      "Algoritmi nas zatvaraju u mehure. Ali šta se desi kad izađeš iz svog? Razgovarali smo sa učesnicima prvog dijaloga mladih.",
-    image: "/novo1.jpeg",
+      "Scrollujemo kroz snimke tuča, pretnji i govora mržnje kao da su deo svakodnevice. Šta se dešava kada generacija odrasta u atmosferi u kojoj se granica između konflikta i nasilja sve više briše?",
+    image: "/ppl.png",
     category_color: "var(--lilac-500)",
   },
   {
     id: 2,
-    category: "Iz zajednice",
+    slug: "ostati-ili-otici",
+    category: "Migracije",
     date: "8. mart 2025",
-    title: '„Nisam očekivao da ćemo se složiti ni oko čega — ali jesmo."',
+    author: "Maša Vračar, alumnistkinja Fondacije Konrad Adenauer",
+    title: "Ostati ili otići?",
     excerpt:
-      "Marko i Jovana su sedeli jedno naspram drugog sa potpuno suprotnim stavovima o EU. Ovo je njihova priča.",
-    image: "/slika3.jpeg",
+      '„Čim završim fakultet, idem." Razgovor o odlasku postao je deo svakodnevice mladih u Srbiji. Ali priča o migracijama mnogo je složenija od jednostavne podele na ostati ili otići.',
+    image: "/go.png",
     category_color: "var(--orange-500)",
   },
   {
     id: 3,
-    category: "Istraživanje",
+    slug: "tehnologija-ko-kome-sluzi",
+    category: "Tehnologija",
     date: "1. mart 2025",
-    title: "Koliko zapravo znamo o stavovima svojih vršnjaka?",
+    author: "Maša Vračar, alumnistkinja Fondacije Konrad Adenauer",
+    title: "Tehnologija — ko kome služi?",
     excerpt:
-      "Pitali smo 200 mladih da pogode šta njihovi prijatelji misle o ključnim temama. Rezultati su bili iznenađujući.",
-    image: "/slika7.jpeg",
+      "Sedamdest dva posto mladih navodi da se često susreće sa lažnim vestima, a 71,9% ne prepoznaje AI-generisani sadržaj. Pitanje više nije da li tehnologija utiče na nas — već ko koga kontroliše.",
+    image: "/tech.png",
     category_color: "var(--mint-700)",
   },
 ];
@@ -173,6 +179,14 @@ export default function News() {
           color: var(--ink-60);
         }
 
+        .news-card-author {
+          font-size: 0.78rem;
+          color: var(--ink-60);
+          font-weight: 600;
+          margin-bottom: 8px;
+          line-height: 1.4;
+        }
+
         .news-card-title {
           font-family: var(--font-d);
           font-weight: 700;
@@ -284,10 +298,15 @@ export default function News() {
                     <span className="news-card-date">{article.date}</span>
                   </div>
                   <h3 className="news-card-title">{article.title}</h3>
+                  {/* Added Author Name Here */}
+                  <div className="news-card-author">{article.author}</div>
                   <p className="news-card-excerpt">{article.excerpt}</p>
-                  <a className="news-card-link" href="#">
+                  <Link
+                    className="news-card-link"
+                    href={`/vesti/${article.slug}`}
+                  >
                     Pročitaj više →
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}

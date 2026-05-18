@@ -31,8 +31,8 @@ const STEPS: Step[] = [
     icon: CalendarDays,
     iconColor: "#10b981",
     iconBg: "rgba(16, 185, 129, 0.12)",
-    title: "Izaberi datum",
-    text: "Odaberi datum koja ti odgovara. Događaj traje od 12–16h.",
+    title: "Izaberi termin",
+    text: "Odaberi termin koji ti odgovara. Imaš tri opcije 10. juna 2026. 11-13h, 13.30-15.30h i 16-18h.",
     accentColor: "var(--mint-500)",
   },
   {
@@ -50,7 +50,7 @@ const STEPS: Step[] = [
     iconColor: "#8b5cf6",
     iconBg: "rgba(139, 92, 246, 0.12)",
     title: "Razgovarajte",
-    text: "Uz pomoć starter kartice pokreneš temu. Odatle — videćeš. Možda se ni malo ne složite. I to je OK.",
+    text: "Uz pomoć starter kartice pokreneš temu. Odatle, videćeš. Možda se ni malo ne složite. I to je OK.",
     accentColor: "var(--lilac-500)",
   },
 ];

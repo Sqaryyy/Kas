@@ -9,7 +9,7 @@ export default function Hero() {
       <div className={s.heroContent}>
         <div className={s.heroEyebrow}>
           <div className={s.heroEyebrowBlink} aria-hidden="true" />
-          Beograd · Subota 12–16h
+          Beograd - 10. jun 2026.
         </div>
 
         <h1 className={s.heroTitle}>
@@ -52,7 +52,7 @@ export default function Hero() {
       <div className={s.heroVisual}>
         <div className={s.heroPhotoFrame}>
           <Image
-            src="/novo3.jpeg"
+            src="/a.jpg"
             alt="Dvoje mladih razgovaraju uz kafu"
             fill
             priority

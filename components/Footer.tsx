@@ -17,8 +17,6 @@ const FOOTER_COLUMNS: FooterColumn[] = [
     links: [
       { label: "O platformi", href: "/o-platformi" },
       { label: "Kako funkcioniše?", href: "#kako" },
-      { label: "Starter kartica", href: "#" },
-      { label: "Kontakt", href: "#" },
     ],
   },
   {
@@ -68,6 +66,23 @@ export default function Footer() {
           color: rgba(255, 255, 255, 0.5);
           line-height: 1.7;
           max-width: 280px;
+          margin-bottom: 16px;
+        }
+
+        .footer-contact {
+          font-size: 0.9rem;
+          color: rgba(255, 255, 255, 0.5);
+        }
+
+        .footer-contact-link {
+          color: white;
+          text-decoration: none;
+          transition: color 0.2s;
+          margin-left: 4px;
+        }
+
+        .footer-contact-link:hover {
+          color: var(--orange-300);
         }
 
         .footer-col-heading {
@@ -157,6 +172,15 @@ export default function Footer() {
               Platforma za dijalog mladih. Pilot projekat u Beogradu, a zatim i
               u drugim mestima u Srbiji.
             </p>
+            <div className="footer-contact">
+              Email:
+              <a
+                href="mailto:info@zadijalog.rs"
+                className="footer-contact-link"
+              >
+                info@zadijalog.rs
+              </a>
+            </div>
           </div>
 
           {/* Link columns */}
